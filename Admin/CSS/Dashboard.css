@@ -1,0 +1,561 @@
+.ContainerTop {
+  display: flex;
+  flex-direction: row;
+}
+
+.ContainerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  height: auto;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    120deg,
+    rgba(66, 138, 255, 1) 50%,
+    rgba(40, 83, 153, 1) 150%
+  );
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.HeaderContainer .Logo img {
+  width: 203px;
+  height: auto;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.TitleTexts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.TitleTexts h1 {
+  font-size: 62px;
+  font-weight: 500;
+  color: #fbfbfb;
+  font-style: italic;
+}
+
+.TitleTexts h2 {
+  font-size: 38px;
+  font-weight: 500;
+  color: #ffec57;
+  margin-top: -10px;
+}
+.TitleTexts p {
+  font-size: 18px;
+  color: #fbfbfb;
+}
+
+.TotalContainers {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  color: #fff;
+}
+
+.TotalApprentice {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  background: #316efa;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.TotalOnline {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: auto;
+  border-radius: 12px;
+  background: #16ba00;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.TotalOffline {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: auto;
+  border-radius: 12px;
+  background: #ba0000;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.TotalTitleText {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin: 10px 0px 0px 10px;
+  color: #fbfbfb;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.TotalNumber {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 10px;
+  font-size: 62px;
+  font-weight: 500;
+  margin-top: 5px;
+  gap: 3px;
+}
+
+.TotalNumber svg {
+  width: 68px;
+  height: 68px;
+}
+
+.ContainerRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+  margin-left: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.InventoryMargin {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  margin: 10px 15px 10px 15px;
+}
+
+.TitleInventory {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  margin-top: 10px;
+  font-size: 28px;
+  margin-left: 10px;
+  color: #222;
+  border: none;
+  font-weight: 500;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+.ContainerRight svg {
+  width: 38px;
+  height: 38px;
+  margin-right: 10px;
+}
+
+.TotalItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+
+.TotalItemsContainer .margin {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.TotalItemsContainer .TitleName {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.TotalItemsContainer .TitleName svg {
+  width: 42px;
+  height: 42px;
+}
+
+.TotalItemsContainer .TitleTotal {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  width: auto;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 20px;
+}
+.ComputerHarderWare {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  background-color: #007bff;
+  border-radius: 12px;
+  padding: 15px 0 15px 0;
+}
+
+.NetworkingEquipment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #28a745;
+  border-radius: 12px;
+  padding: 15px 0 15px 0;
+}
+
+.Accessories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #fd7e14;
+  border-radius: 12px;
+  padding: 15px 0 15px 0;
+}
+
+.Furniture {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #343a40;
+  border-radius: 12px;
+  padding: 15px 0 15px 0;
+}
+
+.ContainerBtm {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+.ContainerBtmMargin {
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  margin: 20px 25px 20px 25px;
+}
+
+.TitleStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+  color: #0866ff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.SearchbarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  gap: 20px;
+}
+
+.SearchBar {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border-radius: 12px;
+  border: 1px solid #a9a9a9;
+}
+
+.SearchBar svg {
+  margin-left: 10px;
+}
+.SearchBar input {
+  border: none;
+  font-size: 15px;
+  color: #222;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding-left: 15px;
+}
+
+.SearchBar input:focus {
+  outline: none;
+}
+
+.SearchbarContainer button {
+  border-radius: 12px;
+  color: #316efa;
+  border: 1px solid #b6b6b6;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  width: 135px;
+  height: 60px;
+  transition: all 0.3s ease-in-out;
+}
+
+.SearchbarContainer button:hover {
+  color: #fff;
+  background: #316efa;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) {
+  .ContainerLeft {
+    gap: 15px;
+  }
+
+  .HeaderContainer {
+    border-radius: 8px;
+  }
+
+  .HeaderContainer .Logo img {
+    width: 187px;
+    height: auto;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .TitleTexts {
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+
+  .TitleTexts h1 {
+    font-size: 42px;
+    font-weight: 500;
+  }
+
+  .TitleTexts h2 {
+    font-size: 28px;
+    margin-top: -5px;
+  }
+  .TitleTexts p {
+    font-size: 16px;
+  }
+
+  .TotalContainers {
+    gap: 15px;
+  }
+
+  .TotalApprentice {
+    border-radius: 8px;
+  }
+
+  .TotalOnline {
+    height: 100%;
+    width: auto;
+    border-radius: 8px;
+  }
+
+  .TotalOffline {
+    height: 100%;
+    width: auto;
+    border-radius: 8px;
+  }
+
+  .TotalTitleText {
+    margin: 10px 0px 0px 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .TotalNumber {
+    margin-bottom: 5px;
+    font-size: 58px;
+    font-weight: 500;
+    margin-top: 5px;
+    gap: 3px;
+  }
+
+  .TotalNumber svg {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ContainerRight {
+    width: 50%;
+    height: auto;
+    margin-left: 15px;
+    border-radius: 8px;
+  }
+
+  .InventoryMargin {
+    height: 100%;
+    margin: 10px 15px 10px 15px;
+  }
+
+  .TitleInventory {
+    height: 100%;
+    margin-top: 10px;
+    font-size: 24px;
+    margin-left: 5px;
+    gap: 5px;
+    padding-bottom: 10px;
+  }
+
+  .ContainerRight svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .TotalItemsContainer {
+    margin-top: 10px;
+    gap: 10px;
+    padding-bottom: 5px;
+  }
+
+  .TotalItemsContainer .margin {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .TotalItemsContainer .TitleName {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .TotalItemsContainer .TitleName svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .TotalItemsContainer .TitleTotal {
+    font-size: 24px;
+    width: auto;
+    font-weight: 500;
+    margin-left: 20px;
+  }
+  .ComputerHarderWare {
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 0 10px 0;
+  }
+
+  .NetworkingEquipment {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px 0 10px 0;
+  }
+
+  .Accessories {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px 0 10px 0;
+  }
+
+  .Furniture {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px 0 10px 0;
+  }
+
+  .ContainerBtm {
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+
+  .ContainerBtmMargin {
+    width: 100%;
+    height: 100%;
+    margin: 15px 20px 15px 20px;
+  }
+
+  .TitleStatus {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .TitleStatus svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .SearchbarContainer {
+    margin-top: 15px;
+    gap: 15px;
+  }
+
+  .SearchBar {
+    height: 50px;
+    border-radius: 8px;
+  }
+
+  .SearchBar svg {
+    margin-left: 10px;
+    width: 28px;
+    height: 28px;
+  }
+  .SearchBar input {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+  }
+
+  .SearchbarContainer button {
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 135px;
+    height: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+}

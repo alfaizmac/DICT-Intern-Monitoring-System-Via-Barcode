@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Segoe UI History, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f2f4f7;
+}
+
+.PageMargin {
+  margin: 90px 40px 40px 380px;
+}
+
+@media screen and (max-width: 1440px) {
+  .PageMargin {
+    margin: 80px 30px 30px 330px;
+  }
+}

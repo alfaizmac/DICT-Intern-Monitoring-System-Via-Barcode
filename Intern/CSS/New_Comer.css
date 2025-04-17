@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI History", Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f2f4f7;
+}
+
+.FirstContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: 40px 220px 0px 220px;
+}
+
+.TopContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    70deg,
+    rgba(66, 138, 255, 1) 0%,
+    rgba(40, 83, 153, 1) 200%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.TopContainer img {
+  width: 184px;
+  height: 177px;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.TopInnerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.WelcomeMessage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 30px;
+  margin-right: 60px;
+}
+
+.WelcomeMessage h1 {
+  font-size: 42px;
+  color: #fff;
+  font-style: italic;
+  font-weight: lighter !important;
+  margin-bottom: 10px;
+}
+
+.WelcomeMessage h1 span {
+  font-weight: 600 !important;
+  font-size: 42px;
+}
+
+.WelcomeMessage p {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.UploadButton p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  gap: 3px;
+  font-weight: 400;
+  color: #757575;
+}
+
+.WelcomeMessage p.FillField {
+  font-size: 16px;
+  color: #ffec57;
+  margin-bottom: 10px;
+}
+
+.InformationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 40px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.InformationContainerMargin {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.ContainersProfile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.ContainersProfile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.ContainersProfile .UploadButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: auto;
+  height: auto;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #555555;
+  gap: 10px;
+}
+
+.InformationContainer button,
+.ContainersProfile .UploadButton button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #0866ff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.InformationContainer button:hover,
+.ContainersProfile .UploadButton button:hover {
+  background-color: #2378ff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.InformationContainer button:active,
+.ContainersProfile .UploadButton button:active {
+  background-color: #0651cc;
+}
+
+.InformationContainerMargin h1 {
+  font-size: 24px;
+  color: #1b1b1b;
+  margin-left: 17px;
+}
+
+.Containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Containersname {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 40px;
+  width: auto;
+  height: auto;
+}
+
+.LContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 680px;
+  height: 63px;
+  background-color: #fbfbfb;
+  border-radius: 12px;
+  border: solid 1px #9e9e9e;
+}
+
+.MContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 490px;
+  height: 63px;
+  background-color: #fbfbfb;
+  border-radius: 12px;
+  border: solid 1px #9e9e9e;
+}
+
+.SContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 63px;
+  background-color: #fbfbfb;
+  border-radius: 12px;
+  border: solid 1px #9e9e9e;
+}
+
+.XSContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 63px;
+  background-color: #fbfbfb;
+  border-radius: 12px;
+  border: solid 1px #9e9e9e;
+}
+
+.FullName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  gap: 40px;
+}
+
+.Containers input {
+  width: 100%;
+  height: 100%;
+  background-color: #fbfbfb;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #222;
+  padding-left: 30px;
+  padding-right: 15px;
+}
+
+.Containers input:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.InvisibleDiv {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: auto;
+  height: auto;
+}
+
+.Title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 150px;
+  height: auto;
+}
+
+.SignatureAddButton {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-right: 512px;
+}
+
+.SaveButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
