@@ -1,4 +1,13 @@
-<?php include 'Components/Header.php';
+<?php
+session_start();
+
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
+  header("Location: ../../index.php");
+  exit();
+}
+
+// Include components after session check
+include 'Components/Header.php';
 include 'Components/Sidebar.php';
 ?>
 

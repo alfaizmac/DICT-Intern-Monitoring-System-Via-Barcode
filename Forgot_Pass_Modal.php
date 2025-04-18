@@ -82,7 +82,7 @@
     .MainContainer p {
         font-size: 15px;
         font-weight: 400;
-        color: rgba(26, 26, 26, 1) margin-top: 10px;
+        color: rgba(26, 26, 26, 1);
         margin-top: 20px;
     }
 

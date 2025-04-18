@@ -1,111 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI History", Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.bodymain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: auto;
-  background-color: #f2f4f7;
-}
-
-.FirstContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: auto;
-  margin: 40px 220px 0px 220px;
-  background-color: #f2f4f7;
-}
-
-.TopContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  width: 100%;
-  border-radius: 12px;
-  background: linear-gradient(
-    70deg,
-    rgba(66, 138, 255, 1) 0%,
-    rgba(40, 83, 153, 1) 200%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.TopContainer img {
-  width: 184px;
-  height: 177px;
-  margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 50%;
-}
-
-.TopInnerContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.WelcomeMessage {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 30px;
-  margin-right: 60px;
-}
-
-.WelcomeMessage h1 {
-  font-size: 42px;
-  color: #fff;
-  font-style: italic;
-  font-weight: lighter !important;
-  margin-bottom: 10px;
-}
-
-.WelcomeMessage h1 span {
-  font-weight: 600 !important;
-  font-size: 42px;
-}
-
-.WelcomeMessage p {
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.UploadButton p {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  gap: 3px;
-  font-weight: 400;
-  color: #757575;
-}
-
-.WelcomeMessage p.FillField {
-  font-size: 16px;
-  color: #ffec57;
-  margin-bottom: 10px;
-}
-
 .InformationContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
-  margin-top: 30px;
-  margin-bottom: 20px;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -116,8 +13,8 @@
   width: 100%;
   height: 2px;
   background-color: #e0e0e0;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .InformationContainerMargin {
@@ -129,59 +26,67 @@
 .ContainersProfile {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: end;
+  gap: 10px;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
-.ContainersProfile img {
+.InternName img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
 
-.ContainersProfile .UploadButton {
+.InternName {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  width: auto;
-  height: auto;
-  margin-left: 20px;
-  font-size: 15px;
-  font-weight: 300;
-  color: #555555;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   gap: 10px;
 }
 
-.InformationContainer button,
-.ContainersProfile .UploadButton button {
+.InternFName {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: start;
+}
+
+.IFullName {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.ICourse {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.IUpdate {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 150px;
   height: 50px;
-  border-radius: 8px;
-  background-color: #0866ff;
+  border-radius: 12px;
   border: none;
-  font-size: 16px;
-  font-weight: 500;
   color: #fff;
-}
-
-.InformationContainer button:hover,
-.ContainersProfile .UploadButton button:hover {
-  background-color: #2378ff;
-  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  background: #428aff;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
-.InformationContainer button:active,
-.ContainersProfile .UploadButton button:active {
-  background-color: #0651cc;
+.IUpdate:hover {
+  background: #649fff;
 }
 
 .InformationContainerMargin h1 {
@@ -197,7 +102,7 @@
   align-items: center;
   width: 100%;
   height: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -300,16 +205,90 @@
 
 .SignatureAddButton {
   display: flex;
-  justify-content: end;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   height: auto;
-  padding-right: 512px;
+}
+
+.SignatureAddButton button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  background: transparent;
+  color: #0651cc;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.SignatureAddButton button:hover {
+  background: transparent;
+  color: #0866ff;
+}
+.SignatureAddButton button:hover svg {
+  background: transparent;
+  fill: #0866ff;
 }
 
 .SaveButton {
+  position: fixed;
+  bottom: 80px;
+  right: 100px;
+  z-index: 2;
+}
+
+.SaveButton button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  width: 130px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 5px;
+  background: #428aff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.SaveButton button:hover {
+  background: #649fff;
+}
+
+@media screen and (max-width: 1440px) {
+  .IFullName {
+    font-size: 38px;
+  }
+  .ICourse {
+    font-size: 18px;
+  }
+
+  .IUpdate {
+    font-size: 16px;
+    height: 40px;
+    border-radius: 8px;
+    width: 100px;
+  }
+  .divider {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .SaveButton button {
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .SaveButton {
+    margin-top: 50px;
+  }
 }

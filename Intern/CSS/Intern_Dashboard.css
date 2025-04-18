@@ -1,0 +1,253 @@
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 20px;
+}
+
+.TopContainer {
+  height: 250px;
+  width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    70deg,
+    rgba(66, 138, 255, 1) 0%,
+    rgba(40, 83, 153, 1) 200%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.TopContainer img {
+  width: 220px;
+  height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.TopInnerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.WelcomeMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  height: auto;
+
+  margin-left: 30px;
+  margin-right: 60px;
+}
+
+.WelcomeMessage h1 {
+  font-size: 48px;
+  color: #fff;
+  font-style: italic;
+  font-weight: lighter !important;
+  margin-bottom: 10px;
+}
+
+.WelcomeMessage h1 span {
+  font-weight: 600 !important;
+  font-size: 48px;
+}
+
+.WelcomeMessage p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.divider {
+  background-color: #fff;
+  width: 2px;
+  height: 80%;
+  margin-left: 10px;
+}
+
+.TimeComplete {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: start;
+  width: 50%;
+  height: 100%;
+}
+
+.TimeCompleteMargin {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  margin-top: 60px;
+}
+
+.Hcom {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.Hours {
+  font-size: 48px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.InternName {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ffec57;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.ButtomContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.TimeTackerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.BottomContainerMargin {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 20px 20px;
+}
+
+.TimeTrackerComponent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  gap: 20px;
+}
+
+.DocumentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.DocumentComponent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  gap: 20px;
+}
+
+.TrackerContainerList {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background: #316efa;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.First {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: start;
+  align-items: start;
+  width: 25%;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.dataseason {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -10px;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.DocumentContainerList {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background: #a20101;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.DocTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.DocStatus {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  width: auto;
+}
