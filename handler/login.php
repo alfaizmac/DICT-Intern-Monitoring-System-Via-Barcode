@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // If not admin, check OJT_TABLE_STATUS_CREDENTAIL
+    // If not admin, check OJT_TABLE_STATUS_CREDENTIAL
     $ojtQuery = "SELECT * FROM OJT_TABLE_STATUS_CREDENTIAL WHERE Username = ? AND Password = ?";
     $ojtParams = array($username, $password);
     $ojtStmt = sqlsrv_query($conn, $ojtQuery, $ojtParams);
@@ -37,10 +37,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ojtRow = sqlsrv_fetch_array($ojtStmt, SQLSRV_FETCH_ASSOC);
 
     if ($ojtRow) {
-        // OJT credentials matched
+        // OJT credentials matched - check personal data
+        $ojtId = $ojtRow['OJT_ID'];
+
+        // Check if OJT exists in personal data table
+        $personalDataQuery = "SELECT * FROM OJT_TABLE_PERSONAL_DATA WHERE OJT_ID = ?";
+        $personalDataParams = array($ojtId);
+        $personalDataStmt = sqlsrv_query($conn, $personalDataQuery, $personalDataParams);
+
+        if ($personalDataStmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+
+        $personalDataRow = sqlsrv_fetch_array($personalDataStmt, SQLSRV_FETCH_ASSOC);
+
+        // Set session variables
         $_SESSION['user_type'] = 'ojt';
         $_SESSION['username'] = $username;
-        header("Location: /DICT-FRONTEND/Intern/Intern_Dashboard.php");
+        $_SESSION['ojt_id'] = $ojtId;
+
+        if ($personalDataRow) {
+            // Personal data exists - go to dashboard
+            header("Location: /DICT-FRONTEND/Intern/Intern_Dashboard.php");
+        } else {
+            // New OJT - redirect to New_Comer page
+            header("Location: /DICT-FRONTEND/Intern/New_Comer.php");
+        }
         exit();
     }
 
