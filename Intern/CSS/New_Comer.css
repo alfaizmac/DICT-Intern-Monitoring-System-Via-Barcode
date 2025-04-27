@@ -13,6 +13,22 @@ body {
   top: 0;
 }
 
+.EducInitials {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.initial {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #757575;
+  gap: 3px;
+}
+
 .bodymain {
   display: flex;
   justify-content: center;

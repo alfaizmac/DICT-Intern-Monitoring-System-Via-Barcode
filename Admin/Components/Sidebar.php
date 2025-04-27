@@ -1,3 +1,8 @@
+<?php
+// Get current page filename
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
+
 <div class="BackgroundSidebar">
   <div class="MarginSidebar">
     <div class="AdminLogo">
@@ -15,62 +20,82 @@
     <div class="dividerSidebar"></div>
     <div class="ButtonSeparator">
       <div class="ButtonUpperSidebar">
-        <button>
-          <svg width="30" height="30" fill="#0866FF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M19 5v2h-4V5h4ZM9 5v6H5V5h4Zm10 8v6h-4v-6h4ZM9 17v2H5v-2h4ZM21 3h-8v6h8V3ZM11 3H3v10h8V3Zm10 8h-8v10h8V11Zm-10 4H3v6h8v-6Z">
-            </path>
-          </svg><span>DASHBOARD</span>
-        </button>
-        <button>
-          <svg width="30" height="30" fill="#0866FF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m20.22 22.5-1.441-5.044a.75.75 0 0 1 .253-.792l3.373-2.699-1.015-4.064-2.054 2.568a.75.75 0 0 1-.586.281H15v-1.5h3.39l2.774-3.469a.75.75 0 0 1 1.314.287l1.5 6a.75.75 0 0 1-.259.768l-3.36 2.688 1.304 4.564-1.443.412Z">
-            </path>
-            <path
-              d="M17.25 4.125a2.625 2.625 0 1 1 5.25 0 2.625 2.625 0 0 1-5.25 0Zm1.5 0a1.125 1.125 0 1 0 2.25 0 1.125 1.125 0 0 0-2.25 0Z">
-            </path>
-            <path
-              d="M15.003 14.25a1.503 1.503 0 0 1-1.503-1.503v-1.494a1.503 1.503 0 0 1 1.503-1.503H16.5V7.5h-9v2.25h1.497a1.503 1.503 0 0 1 1.503 1.503v1.494a1.503 1.503 0 0 1-1.503 1.503H7.5v2.25h9v-2.25h-1.497Z">
-            </path>
-            <path
-              d="m3.78 22.5 1.441-5.044a.751.751 0 0 0-.253-.792l-3.374-2.699L2.61 9.901l2.054 2.568a.751.751 0 0 0 .586.281H9v-1.5H5.61L2.836 7.781a.75.75 0 0 0-1.313.287l-1.5 6a.75.75 0 0 0 .258.768l3.36 2.688-1.304 4.564 1.443.412Z">
-            </path>
-            <path
-              d="M4.125 6.75a2.625 2.625 0 1 1 0-5.25 2.625 2.625 0 0 1 0 5.25Zm0-3.75a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z">
-            </path>
-          </svg><span>APPRENTICE</span>
-        </button>
-        <button>
-          <svg width="30" height="30" fill="none" stroke="#0866FF" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.5 5h-14v17h14V5Z"></path>
-            <path d="M17.5 5V2H4a.5.5 0 0 0-.5.5V19h3"></path>
-            <path d="M10.5 11h6"></path>
-            <path d="M10.5 15h6"></path>
-          </svg><span>LOG BOOK</span>
-        </button>
-        <button>
-          <svg width="30" height="30" fill="none" stroke="#0866FF" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 6H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Z"></path>
-            <path d="M8.975 12.004h6"></path>
-            <path d="m3 6.5 3.5-4h11l3.5 4"></path>
-          </svg><span>INVENTORY</span>
-        </button>
+        <a href="Dashboard.php" class="<?php echo $current_page === 'Dashboard.php' ? 'active' : ''; ?>">
+          <button>
+            <svg width="30" height="30" fill="#0866FF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 5v2h-4V5h4ZM9 5v6H5V5h4Zm10 8v6h-4v-6h4ZM9 17v2H5v-2h4ZM21 3h-8v6h8V3ZM11 3H3v10h8V3Zm10 8h-8v10h8V11Zm-10 4H3v6h8v-6Z">
+              </path>
+            </svg>
+            <span>DASHBOARD</span>
+          </button>
+        </a>
+
+        <a href="Apprentice.php"
+          class="<?php echo $current_page === 'Apprentice.php' || $current_page === 'Intern_Information.php' || $current_page === 'Intern_Record.php' ? 'active' : ''; ?>">
+          <button>
+            <svg width="30" height="30" fill="#0866FF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m20.22 22.5-1.441-5.044a.75.75 0 0 1 .253-.792l3.373-2.699-1.015-4.064-2.054 2.568a.75.75 0 0 1-.586.281H15v-1.5h3.39l2.774-3.469a.75.75 0 0 1 1.314.287l1.5 6a.75.75 0 0 1-.259.768l-3.36 2.688 1.304 4.564 1.443.412Z">
+              </path>
+              <path
+                d="M17.25 4.125a2.625 2.625 0 1 1 5.25 0 2.625 2.625 0 0 1-5.25 0Zm1.5 0a1.125 1.125 0 1 0 2.25 0 1.125 1.125 0 0 0-2.25 0Z">
+              </path>
+              <path
+                d="M15.003 14.25a1.503 1.503 0 0 1-1.503-1.503v-1.494a1.503 1.503 0 0 1 1.503-1.503H16.5V7.5h-9v2.25h1.497a1.503 1.503 0 0 1 1.503 1.503v1.494a1.503 1.503 0 0 1-1.503 1.503H7.5v2.25h9v-2.25h-1.497Z">
+              </path>
+              <path
+                d="m3.78 22.5 1.441-5.044a.751.751 0 0 0-.253-.792l-3.374-2.699L2.61 9.901l2.054 2.568a.751.751 0 0 0 .586.281H9v-1.5H5.61L2.836 7.781a.75.75 0 0 0-1.313.287l-1.5 6a.75.75 0 0 0 .258.768l3.36 2.688-1.304 4.564 1.443.412Z">
+              </path>
+              <path
+                d="M4.125 6.75a2.625 2.625 0 1 1 0-5.25 2.625 2.625 0 0 1 0 5.25Zm0-3.75a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z">
+              </path>
+            </svg>
+            <span>APPRENTICE</span>
+          </button>
+        </a>
+
+        <a href="Logbook.php" class="<?php echo $current_page === 'Logbook.php' ? 'active' : ''; ?>">
+          <button>
+            <svg width="30" height="30" fill="none" stroke="#0866FF" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 5h-14v17h14V5Z"></path>
+              <path d="M17.5 5V2H4a.5.5 0 0 0-.5.5V19h3"></path>
+              <path d="M10.5 11h6"></path>
+              <path d="M10.5 15h6"></path>
+            </svg>
+            <span>LOG BOOK</span>
+          </button>
+        </a>
+
+        <a href="Inventory.php" class="<?php echo $current_page === 'Inventory.php' ? 'active' : ''; ?>">
+          <button>
+            <svg width="30" height="30" fill="none" stroke="#0866FF" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Z"></path>
+              <path d="M8.975 12.004h6"></path>
+              <path d="m3 6.5 3.5-4h11l3.5 4"></path>
+            </svg>
+            <span>INVENTORY</span>
+          </button>
+        </a>
       </div>
       <div class="ButtonSignOut">
-        <button>
-          <svg width="30" height="30" fill="#0866ff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m17 8-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4-4-4ZM5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5Z">
-            </path>
-          </svg>SIGN OUT
-        </button>
+        <a href="/DICT-MANAGEMENT/handler/logout.php">
+          <button>
+            <svg width="30" height="30" fill="#0866ff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m17 8-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4-4-4ZM5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5Z">
+              </path>
+            </svg>
+            SIGN OUT
+          </button>
+        </a>
       </div>
     </div>
   </div>
 </div>
+
 
 <style>
   * {
@@ -132,25 +157,65 @@
     height: 100%;
   }
 
-  .ButtonSeparator button:hover {
+  .ButtonSeparator button,
+  .ButtonSeparator button svg {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .ButtonUpperSidebar a {
+    text-decoration: none;
+  }
+
+  .ButtonSignOut a {
+    text-decoration: none;
+  }
+
+  /* Active state now on the anchor tag */
+  .ButtonUpperSidebar a.active button {
     background-color: #428aff;
     color: #fbfbfb;
     border: 1px solid #fbfbfb;
-    transition: all 0.3s ease-in-out;
   }
 
-
-  .ButtonSeparator button:nth-child(1):hover svg,
-  .ButtonSeparator button:nth-child(2):hover svg {
+  /* SVG fill for active buttons (1st and 2nd buttons) */
+  .ButtonUpperSidebar a.active:nth-child(1) button svg,
+  .ButtonUpperSidebar a.active:nth-child(2) button svg {
     fill: #fbfbfb;
-    transition: all 0.3s ease-in-out;
   }
 
-  .ButtonSeparator button:nth-child(4):hover svg,
-  .ButtonSeparator button:nth-child(3):hover svg {
+  /* SVG stroke for active buttons (3rd and 4th buttons) */
+  .ButtonUpperSidebar a.active:nth-child(3) button svg,
+  .ButtonUpperSidebar a.active:nth-child(4) button svg {
     stroke: #fbfbfb;
-    transition: all 0.3s ease-in-out;
   }
+
+  /* Hover states */
+  .ButtonUpperSidebar a:hover button {
+    background-color: #428aff;
+    color: #fbfbfb;
+    border: 1px solid #fbfbfb;
+  }
+
+  .ButtonUpperSidebar a:hover:nth-child(1) button svg,
+  .ButtonUpperSidebar a:hover:nth-child(2) button svg {
+    fill: #fbfbfb;
+  }
+
+  .ButtonUpperSidebar a:hover:nth-child(3) button svg,
+  .ButtonUpperSidebar a:hover:nth-child(4) button svg {
+    stroke: #fbfbfb;
+  }
+
+  .ButtonSignOut button:hover {
+    background-color: #428aff;
+    color: #fbfbfb;
+    border: 1px solid #fbfbfb;
+  }
+
+  .ButtonSignOut a:hover button svg {
+    fill: #fbfbfb;
+  }
+
 
 
 

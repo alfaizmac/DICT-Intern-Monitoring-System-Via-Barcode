@@ -1,4 +1,8 @@
-<?php include 'Components/Header.php';
+<?php
+require_once __DIR__ . '../includes/auth_check.php';
+validateAdminSession();
+
+include 'Components/Header.php';
 include 'Components/Sidebar.php';
 ?>
 
@@ -24,7 +28,7 @@ include 'Components/Sidebar.php';
                         <div class="topTwoContainerRecord">
                             <div class="TimeCompleteRecord">
                                 <div class="RecordTitle">
-                                    <span>Time Complete</span>
+                                    <span>Hour Complete</span>
                                 </div>
                                 <div class="RecordValue">
                                     <svg width="62" height="62" fill="none" stroke="#fff" stroke-linecap="round"
@@ -66,12 +70,6 @@ include 'Components/Sidebar.php';
                             </div>
                             <div class="RecordTable"></div>
                         </div>
-                    </div>
-                    <div class="RightContainerRecord">
-                        <div class="DocumentRecordTitle">
-                            <h1>Documents</h1>
-                        </div>
-                        <div class="DocumentsRecord"></div>
                     </div>
                 </div>
 

@@ -1,11 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Segoe UI History, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f2f4f7;
+  margin: 90px 40px 30px 380px;
+  overflow: hidden;
+}
+
 .ContainerBtm {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-top: 20px;
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+/* Add this to your Apprentice.css file */
+.username-cell,
+.password-cell {
+  display: none;
+  width: 0;
+}
+
+/* If you need to hide the table header columns as well */
+th:nth-child(2),  /* Username header */
+th:nth-child(3) {
+  /* Password header */
+  display: none;
 }
 
 .ContainerBtmMargin {
@@ -13,8 +38,28 @@
   justify-content: start;
   align-items: start;
   width: 100%;
-  height: 100%;
-  margin: 20px 25px 20px 25px;
+  height: auto;
+  margin: 20px 25px 25px 25px;
+}
+
+.TableDisplayStatus {
+  margin: 15px;
+  height: calc(100% - 125px); /* Adjust height as needed */
+  overflow-y: auto; /* Enables vertical scrolling when the content overflows */
+}
+
+.TableDisplayStatus::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.apprentice-table {
+  height: auto;
+  width: 100%; /* Ensures the table spans the full width of its container */
+}
+
+.apprentice-table th {
+  position: sticky; /* Makes the header sticky */
+  top: 0; /* Keeps the header at the top when scrolling */
+  z-index: 1; /* Ensures headers stay above other content */
 }
 
 .TitleStatus {
@@ -36,9 +81,10 @@
   justify-self: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 10px;
   width: 100%;
   height: auto;
-  gap: 15px;
+  gap: 10px;
 }
 
 .SearchBar {
@@ -47,7 +93,7 @@
   justify-self: center;
   align-items: center;
   width: 100%;
-  height: 55px;
+  height: 50px;
   border-radius: 12px;
   border: 1px solid #a9a9a9;
 }
@@ -80,8 +126,8 @@
   font-size: 18px;
   font-weight: 500;
   background: #fff;
-  width: 135px;
-  height: 55px;
+  width: 125px;
+  height: 50px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -104,12 +150,17 @@
 .addInternModal {
   position: absolute;
   bottom: 50px;
-  right: 80px;
+  right: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80px;
   height: 80px;
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+}
+.addInternModal:hover {
+  opacity: 1;
 }
 
 .addInternModal button {
@@ -133,5 +184,306 @@
   transition: all 0.3s ease-in-out;
 }
 
+.apprentice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.apprentice-table th {
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Hide header for first and last columns */
+.apprentice-table th:first-child,
+.apprentice-table th:last-child {
+  color: transparent;
+}
+
+.apprentice-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.apprentice-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.profile-cell {
+  width: 50px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #0866ff;
+  border-radius: 12px;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #d6d9dd;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #c1c4c8;
+}
+
+.action-btn svg {
+  stroke: #4a4a4a;
+}
+
+.apprentice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.apprentice-table th {
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Hide header for first and last columns */
+.apprentice-table th:first-child,
+.apprentice-table th:last-child {
+  color: transparent;
+}
+
+.apprentice-table td {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.apprentice-table tr {
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.apprentice-table tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.profile-cell {
+  width: 80px; /* 50px img + 15px margin on each side */
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 35px;
+}
+
+.name-cell {
+  width: 50%;
+  margin: 0 25px;
+  word-wrap: break-word;
+}
+
+.school-cell {
+  width: 50%;
+  margin: 0 15px;
+  word-wrap: break-word;
+}
+
+.completed-cell,
+.required-cell {
+  width: auto;
+  margin: 0 15px;
+}
+
+.action-cell {
+  width: 30px; /* 50px button + 15px margin on each side */
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d6d9dd;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 35px;
+}
+
+.action-btn:hover {
+  background-color: #c1c4c8;
+}
+
+/* Add to Apprentice.css */
+.export-panel {
+  position: absolute;
+  top: 220px;
+  right: 65px;
+  /* transform: translate(-50%, -50%); */
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+}
+
+.export-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.export-btn:hover {
+  background: #f5f5f5;
+}
+
+.export-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
 @media screen and (max-width: 1440px) {
+  body {
+    margin: 80px 30px 30px 330px;
+  }
+
+  .TableDisplayStatus {
+    height: calc(100% - 105px); /* Adjust height as needed */
+  }
+
+  .TitleStatus {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .action-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 35px;
+  }
+  .TitleStatus svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .SearchbarContainer {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .SearchBar {
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .SearchBar svg {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+  }
+  .SearchBar input {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+  }
+
+  .SearchbarContainer button {
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 105px;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .SearchbarContainer svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .addInternModal {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Add to Apprentice.css */
+  .export-panel {
+    top: 185px;
+    right: 55px;
+  }
 }

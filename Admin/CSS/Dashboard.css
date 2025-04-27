@@ -44,20 +44,20 @@
 }
 
 .TitleTexts h1 {
-  font-size: 62px;
+  font-size: 58px;
   font-weight: 500;
   color: #fbfbfb;
   font-style: italic;
 }
 
 .TitleTexts h2 {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 500;
   color: #ffec57;
   margin-top: -10px;
 }
 .TitleTexts p {
-  font-size: 18px;
+  font-size: 15px;
   color: #fbfbfb;
 }
 
@@ -290,7 +290,7 @@
   height: auto;
   gap: 10px;
   color: #0866ff;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -299,7 +299,7 @@
   flex-direction: row;
   justify-self: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   height: auto;
   gap: 20px;
@@ -311,7 +311,7 @@
   justify-self: center;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 50px;
   border-radius: 12px;
   border: 1px solid #a9a9a9;
 }
@@ -374,16 +374,16 @@
   }
 
   .TitleTexts h1 {
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 500;
   }
 
   .TitleTexts h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin-top: -5px;
   }
   .TitleTexts p {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .TotalContainers {
@@ -520,16 +520,16 @@
 
   .TitleStatus {
     gap: 10px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .TitleStatus svg {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .SearchbarContainer {
-    margin-top: 15px;
+    margin-top: 10px;
     gap: 15px;
   }
 

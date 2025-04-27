@@ -1,8 +1,18 @@
 <?php
+require_once __DIR__ . '../includes/auth_check.php';
+validateAdminSession();
+
 session_start();
 
+// Redirect to login page if not logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+  header('Location: /DICT-MANAGEMENT/');
+  exit;
+}
+
+// Check user type (admin only for this dashboard)
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
-  header("Location: ../../index.php");
+  header("Location: /DICT-MANAGEMENT/");
   exit();
 }
 
@@ -10,6 +20,7 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
 include 'Components/Header.php';
 include 'Components/Sidebar.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -163,14 +174,13 @@ include 'Components/Sidebar.php';
         </div>
         <div class="SearchbarContainer">
           <div class="SearchBar">
-            <svg width="32" height="32" fill="none" stroke="#0866ff" stroke-linecap="round" stroke-linejoin="round"
+            <svg width="28" height="28" fill="none" stroke="#0866ff" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"></path>
               <path d="m21 21-6-6"></path>
             </svg>
             <input type="text" placeholder="Search name..." />
           </div>
-          <button><span>See More</span></button>
         </div>
         <div class="TableDisplayStatus"></div>
       </div>

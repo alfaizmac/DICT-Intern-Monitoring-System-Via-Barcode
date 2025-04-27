@@ -90,7 +90,7 @@ $ojt_id = $_SESSION['ojt_id'];
 
 <body>
     <div class="FirstContainer">
-        <label class="hidden" for="">OJT ID: <?php echo htmlspecialchars($ojt_id); ?></label>
+        <label hidden class="hidden" for="">OJT ID: <?php echo htmlspecialchars($ojt_id); ?></label>
         <div class="TopContainer">
             <div class="TopInnerContainer">
                 <img src="../img/DICT-logo.png" alt="logo" class="Logo">
@@ -168,7 +168,7 @@ $ojt_id = $_SESSION['ojt_id'];
                         <span>Signature</span>
                     </div>
                     <div class="SignatureCon">
-                        <img id="signature-preview" src="/DICT-FRONTEND/Signatures/DefualtSignature.jpg"
+                        <img id="signature-preview" src="/DICT-MANAGEMENT/Signatures/DefualtSignature.jpg"
                             alt="Signature Preview">
                     </div>
                     <div class="SignatureAddButton">
@@ -195,13 +195,31 @@ $ojt_id = $_SESSION['ojt_id'];
                     <div class="Title">
                         <span>School</span>
                     </div>
-                    <div class="MContainer"><input type="text" id="School" required></div>
+                    <div class="EducInitials">
+                        <div class="MContainer"><input type="text" id="School"
+                                placeholder="Ex.: Newbrighton School of the Philippines, INC." required></div>
+                        <p class="initial"><svg width="18" height="18" fill="#757575" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Zm0-2a8 8 0 1 0 0-16.001A8 8 0 0 0 12 20Zm0-10a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1Zm0-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+                                </path>
+                            </svg>Please avoid using initials </p>
+                    </div>
                 </div>
                 <div class="Containers">
                     <div class="Title">
                         <span>Course</span>
                     </div>
-                    <div class="MContainer"><input type="text" id="Course" required></div>
+                    <div class="EducInitials">
+                        <div class="MContainer"><input type="text" id="Course"
+                                placeholder="Ex.: Bachelor of Science in Information and Technology" required></div>
+                        <p class="initial"><svg width="18" height="18" fill="#757575" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Zm0-2a8 8 0 1 0 0-16.001A8 8 0 0 0 12 20Zm0-10a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1Zm0-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+                                </path>
+                            </svg>Please avoid using initials </p>
+                    </div>
                 </div>
                 <div class="divider"></div>
                 <h1>CONTACT PERSON</h1>
@@ -231,12 +249,11 @@ $ojt_id = $_SESSION['ojt_id'];
                 </div>
                 <div class="SaveButton">
                     <button id="Submit-Info">Save</button>
-
                 </div>
             </div>
         </div>
-
     </div>
+
     <!-- Signature Modal -->
     <div id="signature-modal" class="signature-modal">
         <div class="signature-modal-content">
@@ -256,6 +273,11 @@ $ojt_id = $_SESSION['ojt_id'];
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Store profile picture and signature data temporarily
+            let profilePictureFile = null;
+            let signatureDataURL = null;
+            let signatureFilename = null;
+
             // Modal elements
             const modal = document.getElementById('signature-modal');
             const openModalBtn = document.getElementById('open-signature-modal');
@@ -274,7 +296,6 @@ $ojt_id = $_SESSION['ojt_id'];
             // Open modal
             openModalBtn.addEventListener('click', function () {
                 modal.style.display = 'block';
-                // Resize canvas to maintain quality
                 resizeCanvas();
             });
 
@@ -288,53 +309,23 @@ $ojt_id = $_SESSION['ojt_id'];
                 signaturePad.clear();
             });
 
-            // Save signature
+            // Save signature (temporarily, not to server yet)
             saveBtn.addEventListener('click', function () {
                 if (signaturePad.isEmpty()) {
                     alert('Please provide a signature first.');
                     return;
                 }
 
-                // Generate unique filename
+                // Generate unique filename (but don't save yet)
                 const ojtId = '<?php echo isset($ojt_id) ? $ojt_id : "unknown"; ?>';
-                const filename = 'signature_' + Date.now() + '_ojt' + ojtId + '.png';
-                console.log('Generated filename:', filename); // Debugging;
+                signatureFilename = 'signature_' + Date.now() + '_ojt' + ojtId + '.png';
 
-                // Convert signature to image
-                const dataURL = signaturePad.toDataURL('image/png');
+                // Store the signature data URL temporarily
+                signatureDataURL = signaturePad.toDataURL('image/png');
+                signaturePreview.src = signatureDataURL;
 
-                // Create a FormData object to send the image
-                const formData = new FormData();
-                formData.append('signature', dataURL);
-                formData.append('filename', filename);
-                formData.append('ojt_id', '<?php echo $ojt_id; ?>');
-
-                // Send the image to server
-                fetch('save_signature.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            return response.text().then(text => {
-                                throw new Error(text);
-                            });
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.success) {
-                            signaturePreview.src = '../Signatures/' + filename + '?t=' + Date.now();
-                            modal.style.display = 'none';
-                            signaturePad.clear();
-                        } else {
-                            alert('Error saving signature: ' + JSON.stringify(data, null, 2));
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Detailed error:\n' + error.message);
-                    });
+                modal.style.display = 'none';
+                signaturePad.clear();
             });
 
             // Handle window resize
@@ -350,52 +341,156 @@ $ojt_id = $_SESSION['ojt_id'];
                 canvas.width = canvas.offsetWidth * ratio;
                 canvas.height = canvas.offsetHeight * ratio;
                 canvas.getContext('2d').scale(ratio, ratio);
-                signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+                signaturePad.clear();
             }
-        });
 
+            // Profile picture upload functionality (store file temporarily)
+            document.getElementById('upload-profile-btn').addEventListener('click', function () {
+                document.getElementById('Profile_Image_Path').click();
+            });
 
-        // Profile picture upload functionality
-        document.getElementById('upload-profile-btn').addEventListener('click', function () {
-            document.getElementById('Profile_Image_Path').click();
-        });
+            document.getElementById('Profile_Image_Path').addEventListener('change', function (e) {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    if (!file.type.match('image.*')) {
+                        alert('Please select an image file');
+                        return;
+                    }
 
-        document.getElementById('Profile_Image_Path').addEventListener('change', function (e) {
-            if (e.target.files.length > 0) {
-                const file = e.target.files[0];
-                if (!file.type.match('image.*')) {
-                    alert('Please select an image file');
+                    // Store the file temporarily
+                    profilePictureFile = file;
+
+                    // Preview the image
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        document.getElementById('profile-picture').src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Save personal data (including images)
+            document.getElementById('Submit-Info').addEventListener('click', async function () {
+                // Get all form values
+                const formData = {
+                    First_Name: document.getElementById('First_Name').value,
+                    Middle_Initial: document.getElementById('Middle_Initial').value,
+                    Last_Name: document.getElementById('Last_Last').value,
+                    Date_Birth: document.getElementById('Date_Birth').value,
+                    Gender: document.getElementById('Gender').value,
+                    Civil_Status: document.getElementById('Civil_Status').value,
+                    Address: document.getElementById('Address').value,
+                    Phone_Number: document.getElementById('Phone_Number').value,
+                    Email: document.getElementById('Email').value,
+                    School: document.getElementById('School').value,
+                    Course: document.getElementById('Course').value,
+                    Contact_Person_Name: document.getElementById('Contact_Person_Name').value,
+                    Contact_Person_No: document.getElementById('Contact_Person_No').value,
+                    Contact_Person_Relation: document.getElementById('Contact_Person_Relation').value,
+                    Contact_Person_Address: document.getElementById('Contact_Person_Address').value,
+                    Profile_Image_Path: '', // Will be set after upload
+                    Signature: '' // Will be set after upload
+                };
+
+                // Validate required fields
+                const requiredFields = [
+                    'First_Name', 'Last_Name', 'Date_Birth', 'Gender',
+                    'Civil_Status', 'Address', 'Phone_Number', 'Email',
+                    'School', 'Course', 'Contact_Person_Name',
+                    'Contact_Person_No', 'Contact_Person_Relation',
+                    'Contact_Person_Address'
+                ];
+
+                for (const field of requiredFields) {
+                    if (!formData[field]) {
+                        alert(`Please fill in all required fields. Missing: ${field.replace('_', ' ')}`);
+                        return;
+                    }
+                }
+
+                // Check if signature was provided
+                if (!signatureDataURL) {
+                    alert('Please provide your signature');
                     return;
                 }
 
-                // Show loading indicator
-                const profileImg = document.getElementById('profile-picture');
-                const originalSrc = profileImg.src;
-                profileImg.src = '../img/loading.gif'; // Add a loading spinner image
+                // Add loading state
+                const saveBtn = document.getElementById('Submit-Info');
+                saveBtn.disabled = true;
+                saveBtn.textContent = 'Saving...';
 
-                const formData = new FormData();
-                formData.append('profile_picture', file);
-                formData.append('ojt_id', '<?php echo $ojt_id; ?>');
+                try {
+                    // Upload profile picture if one was selected
+                    if (profilePictureFile) {
+                        const profileFormData = new FormData();
+                        profileFormData.append('profile_picture', profilePictureFile);
+                        profileFormData.append('ojt_id', '<?php echo $ojt_id; ?>');
 
-                fetch('upload_profile.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            profileImg.src = '../profile_pictures/' + data.filename + '?t=' + Date.now();
-                        } else {
-                            profileImg.src = originalSrc;
-                            alert('Error: ' + data.message);
+                        const profileResponse = await fetch('upload_profile.php', {
+                            method: 'POST',
+                            body: profileFormData
+                        });
+
+                        const profileData = await profileResponse.json();
+                        if (!profileData.success) {
+                            throw new Error('Profile picture upload failed: ' + profileData.message);
                         }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        profileImg.src = originalSrc;
-                        alert('An error occurred while uploading the picture.');
+                        formData.Profile_Image_Path = '../profile_pictures/' + profileData.filename;
+                    } else {
+                        formData.Profile_Image_Path = '../profile_pictures/profiledefault.jpg';
+                    }
+
+                    // Upload signature
+                    const signatureFormData = new FormData();
+                    signatureFormData.append('signature', signatureDataURL);
+                    signatureFormData.append('filename', signatureFilename);
+                    signatureFormData.append('ojt_id', '<?php echo $ojt_id; ?>');
+
+                    const signatureResponse = await fetch('save_signature.php', {
+                        method: 'POST',
+                        body: signatureFormData
                     });
-            }
+
+                    const signatureData = await signatureResponse.json();
+                    if (!signatureData.success) {
+                        throw new Error('Signature upload failed: ' + signatureData.message);
+                    }
+                    formData.Signature = '../Signatures/' + signatureData.filename;
+
+                    // Now save all personal data
+                    const saveResponse = await fetch('/DICT-MANAGEMENT/handler/save_personal_data.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (!saveResponse.ok) {
+                        const text = await saveResponse.text();
+                        try {
+                            const data = JSON.parse(text);
+                            throw new Error(data.message || 'Failed to save data');
+                        } catch (e) {
+                            throw new Error(text);
+                        }
+                    }
+
+                    const saveData = await saveResponse.json();
+                    if (saveData.success) {
+                        alert('Personal data saved successfully!');
+                        window.location.href = '/DICT-MANAGEMENT/Intern/Intern_Dashboard.php';
+                    } else {
+                        throw new Error(saveData.message || 'Failed to save data');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error details: ' + error.message);
+                } finally {
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = 'Save';
+                }
+            });
         });
     </script>
 </body>

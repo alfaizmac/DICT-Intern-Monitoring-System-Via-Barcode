@@ -71,6 +71,8 @@
 
 .IUploadButton {
   display: flex;
+  justify-content: center;
+  align-items: end;
   width: auto;
   gap: 10px;
 }
@@ -234,6 +236,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: start;
+  width: 50%;
+  height: auto;
+}
+
+.SignatureCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
 }
@@ -261,13 +272,6 @@
   fill: #0866ff;
 }
 
-.SaveButton {
-  position: fixed;
-  bottom: 80px;
-  right: 100px;
-  z-index: 2;
-}
-
 .SaveButton button {
   display: flex;
   justify-content: center;
@@ -277,7 +281,7 @@
   border-radius: 12px;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   gap: 5px;
   background: #428aff;
@@ -305,10 +309,14 @@
     width: 100px;
   }
   .IRemove {
-    font-size: 16px;
+    font-size: 14px;
     height: 40px;
     border-radius: 8px;
     width: 100px;
+  }
+
+  .SignatureAddButton {
+    justify-content: end;
   }
 
   .divider {
@@ -319,7 +327,7 @@
   .SaveButton button {
     height: 40px;
     width: 100px;
-    font-size: 16px;
+    font-size: 11px;
     border-radius: 8px;
   }
   .SaveButton {

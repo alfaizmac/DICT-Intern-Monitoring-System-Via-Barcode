@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Admin credentials matched
         $_SESSION['user_type'] = 'admin';
         $_SESSION['username'] = $username;
-        header("Location: /DICT-FRONTEND/Admin/Dashboard.php");
+        $_SESSION['logged_in'] = true; // Add this line
+        header("Location: /DICT-MANAGEMENT/Admin/Dashboard.php");
         exit();
     }
 
@@ -58,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($personalDataRow) {
             // Personal data exists - go to dashboard
-            header("Location: /DICT-FRONTEND/Intern/Intern_Dashboard.php");
+            header("Location: /DICT-MANAGEMENT/Intern/Intern_Dashboard.php");
         } else {
             // New OJT - redirect to New_Comer page
-            header("Location: /DICT-FRONTEND/Intern/New_Comer.php");
+            header("Location: /DICT-MANAGEMENT/Intern/New_Comer.php");
         }
         exit();
     }

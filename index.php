@@ -18,6 +18,7 @@ if (isset($_SESSION['login_error'])) {
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -159,12 +160,6 @@ if (isset($_SESSION['login_error'])) {
             }
         });
 
-        // Handle form submission
-        submitButton.addEventListener('click', function () {
-            // Add your form submission logic here
-            alert('Password reset request submitted!');
-            modal.style.display = 'none';
-        });
     </script>
 
     <script>
